@@ -2,7 +2,10 @@
 	
 	get_header();
 
-	if (have_posts()) :
+	if (have_posts()) : 
+	?>
+		<h2>Search result for : <?php the_search_query(); ?> </h2>
+	<?php
 		while (have_posts()) : 
 			the_post();
 ?>
@@ -31,17 +34,7 @@
 
 				<?php
 
-					if ($post->post_excerpt) {
-						?>
-						<p>
-							<?php echo get_the_excerpt(); ?>
-							<a href="<?php the_permalink(); ?>">Read More &raquo;</a>
-						</p>
-						<?php
-
-					} else {
-						the_content();
-					}
+					the_excerpt();
 
 				?>
 				
@@ -64,7 +57,9 @@
 <?php
 		endwhile;
 	else :
-		echo '<p> No content found. </p>';
+	?>
+		<h2>No result found for : <?php the_search_query(); ?> </h2>
+	<?php
 		endif;
 
 	get_footer();

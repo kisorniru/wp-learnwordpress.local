@@ -22,6 +22,11 @@ p {
 	line-height: 1.65em;
 }
 
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 /* General Layout */
 div.container {
 	max-width: 920px;
@@ -121,7 +126,7 @@ article.page h2 {
 	margin-top: 20px;
 }
 
-input[type=text], select, textarea {
+.contact-us input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -132,7 +137,7 @@ input[type=text], select, textarea {
     resize: vertical;
 }
 
-input[type=submit] {
+.contact-us input[type=submit] {
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
@@ -141,7 +146,7 @@ input[type=submit] {
     cursor: pointer;
 }
 
-input[type=submit]:hover {
+.contact-us input[type=submit]:hover {
     background-color: #45a049;
 }
 
@@ -229,6 +234,46 @@ p.post-info {
 }
 
 p.post-info a:link,
-p.post-info a:visited, {
+p.post-info a:visited {
+	color: #437ba7;
+}
+
+p.post-tag {
+	font-size: 87%;
 	color: #999;
+}
+
+p.post-tag a:link,
+p.post-tag a:visited {
+	color: #437ba7;
+}
+
+
+.has-thumbnail {
+	position: relative;
+	padding-left: 200px;
+}
+
+.post-thumbnail {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* Search */
+.hd-search {
+	float: right;
+}
+
+div.hd-search #searchsubmit {
+	background-color: #006ec3;
+	color: #FFF;
+	padding: 5px 14px;
+	border: none;
+	vertical-align: top; 
+}
+
+div.hd-search #s {
+	vertical-align: top;
+	padding: 3px 0;
 }
