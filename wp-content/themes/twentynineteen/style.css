@@ -1,5 +1,5 @@
 /*
-Theme Name: twentyeighteen
+Theme Name: twentynineteen
 Author: Md. Noor-A-Alam Siddique
 Author URI: https://kisorniru.github.io/
 Version: 1.0
@@ -52,6 +52,53 @@ article.post {
 
 article.post:last-of-type {
 	border-bottom: none;
+}
+
+/* Aside style */
+article.post-aside,
+article.post-link {
+	border-bottom: none;
+	margin-top: 20px; 
+	font-size: 125%;
+	background-color: #FFF5CB;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
+}
+
+.mini-meta {
+	font-size: 68%;
+	margin: 0;
+	color: #777;
+}
+
+/* Link Post Format Style */
+article.post-link {
+	padding: 0px;
+	background-color: #E0EBFF;
+}
+
+article.post-link a {
+	display: block;
+	padding: 20px;
+}
+
+/* Post from Gallery Styles */
+article.post-gallery {
+	margin: 20px 0 0 0;
+	border-bottom: none;
+	border-radius: 5px;
+	background-color: #222;
+	color: #FFF;
+	padding: 20px;
+}
+
+article.post-gallery img {
+	border: none!important;
+}
+
+article.post-gallery h2 {
+	text-align: center;
 }
 
 /* Navigations */
