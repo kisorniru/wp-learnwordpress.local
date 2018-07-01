@@ -28,7 +28,7 @@
 	// Does page have children?
 	function has_children() {
 		global $post;
-		$pages = get_pages('child_of' => $post->ID);
+		$pages = get_pages(array('child_of' => $post->ID));
 		return count($pages);
 	}
 

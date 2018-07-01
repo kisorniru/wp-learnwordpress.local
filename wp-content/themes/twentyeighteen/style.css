@@ -217,3 +217,18 @@ div.info-box p {
 .clearfix {
 	*zoom: 1;
 }
+
+/* Post Style */
+.post h2 {
+	margin-bottom: 0px;
+}
+
+p.post-info {
+	font-size: 87%;
+	color: #999;
+}
+
+p.post-info a:link,
+p.post-info a:visited, {
+	color: #999;
+}
