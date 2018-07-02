@@ -46,6 +46,10 @@ div.container {
 	border-top: 2px dotted #999;
 }
 
+.site-content {
+	margin-top: 20px;
+}
+
 article.post {
 	border-bottom: 2px dotted #bbbbbb;
 }
@@ -58,7 +62,6 @@ article.post:last-of-type {
 article.post-aside,
 article.post-link {
 	border-bottom: none;
-	margin-top: 20px; 
 	font-size: 125%;
 	background-color: #FFF5CB;
 	padding: 20px;
@@ -161,6 +164,41 @@ article.post-gallery h2 {
 
 .site-footer nav ul li:last-of-type {
 	border-right: none;
+}
+
+/* Post Columns */
+.home-columns {
+	padding-top: 30px;
+}
+
+.one-half {
+	width: 45%;
+	float: left;
+	margin-right: 10%;
+}
+
+.last {
+	margin-right: 0;
+}
+
+/* Main Column */
+.main-column {
+	width: 66%;
+	float: left;
+}
+
+/* Side Column */
+.secondary-column {
+	width: 30%;
+	float: right;
+}
+
+/* Footer Widget Area */
+.footer-widget-area {
+	 width: 25%;
+	 float: left;
+	 padding-right: 40px;
+	 box-sizing: border-box;
 }
 
 /* Page Layout */

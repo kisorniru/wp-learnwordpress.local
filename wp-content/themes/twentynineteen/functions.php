@@ -53,4 +53,56 @@
 
 	add_action( 'after_setup_theme', 'learningWordPress_setup' );
 
+	// Add Our Widget Locations
+	function ourWidgetsInit() {
+
+		register_sidebar( array( 
+			'name' => 'Sidebar',
+			'id' => 'sidebar_one',
+			'description' => 'Sidebar description goes here.',
+			'before_widget'  => '<div class="widget-item">',
+			'after_widget'   => '</div>',
+			'before_title'  => '<h3 class="my-special-class">',
+        	'after_title'   => '</h3>',
+		) );
+
+		register_sidebar( array( 
+			'name' => 'Footer Column 1',
+			'id' => 'footer_one',
+			'before_widget'  => '<div class="widget-item">',
+			'after_widget'   => '</div>',
+			'before_title'  => '<h3 class="my-special-class">',
+        	'after_title'   => '</h3>',
+		) );
+
+		register_sidebar( array( 
+			'name' => 'Footer Column 2',
+			'id' => 'footer_two',
+			'before_widget'  => '<div class="widget-item">',
+			'after_widget'   => '</div>',
+			'before_title'  => '<h3 class="my-special-class">',
+        	'after_title'   => '</h3>',
+		) );
+
+		register_sidebar( array( 
+			'name' => 'Footer Column 3',
+			'id' => 'footer_three',
+			'before_widget'  => '<div class="widget-item">',
+			'after_widget'   => '</div>',
+			'before_title'  => '<h3 class="my-special-class">',
+        	'after_title'   => '</h3>',
+		) );
+
+		register_sidebar( array( 
+			'name' => 'Footer Column 4',
+			'id' => 'footer_four',
+			'before_widget'  => '<div class="widget-item">',
+			'after_widget'   => '</div>',
+			'before_title'  => '<h3 class="my-special-class">',
+        	'after_title'   => '</h3>',
+		) );
+	}
+
+	add_action('widgets_init','ourWidgetsInit');
+
 ?>
