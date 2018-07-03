@@ -1,5 +1,5 @@
 <?php
-	
+
 	function learningWordPress_resources() {
 		wp_enqueue_style( 'style', get_stylesheet_uri());
 	}
@@ -54,6 +54,7 @@
 	add_action( 'after_setup_theme', 'learningWordPress_setup' );
 
 	// Add Our Widget Locations
+
 	function ourWidgetsInit() {
 
 		register_sidebar( array( 
@@ -101,8 +102,12 @@
 			'before_title'  => '<h3 class="my-special-class">',
         	'after_title'   => '</h3>',
 		) );
+		
+		// Register Custom Widgets
+		register_widget('Author_Info_Widget');
+
 	}
 
 	add_action('widgets_init','ourWidgetsInit');
 
-?>
+	include_once('custom_functions/custom_wedgets.php');
