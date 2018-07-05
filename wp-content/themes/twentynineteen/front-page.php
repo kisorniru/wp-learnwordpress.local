@@ -3,7 +3,8 @@
 	get_header();
 
 	$sliderImages = new WP_Query(array(
-						'post_type' => 'sliderUniqueId'
+						'post_type' => 'sliderUniqueId',
+//                        'posts_per_page' => 2
 					));
 
 	?>
@@ -44,11 +45,13 @@
 
 								<div class="carousel-caption text-left">
 
-									<h1>Example headline.</h1>
+									<h1>
+                                        <?php echo get_post_meta($post->ID, 'image_title', true); ?>
+                                    </h1>
 
-									<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+									<p><?php echo get_post_meta($post->ID, 'image_description', true); ?></p>
 
-									<p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+									<p><a class="btn btn-lg btn-primary" href="<?php echo get_post_meta($post->ID, 'image_link', true); ?>" role="button">Sign up today</a></p>
 
 								</div>
 

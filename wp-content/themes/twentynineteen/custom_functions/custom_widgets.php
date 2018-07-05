@@ -65,3 +65,5 @@ class Author_Info_Widget extends WP_widget {
 	}
 
 }
+
+add_action('widgets_init','ourWidgetsInit');
