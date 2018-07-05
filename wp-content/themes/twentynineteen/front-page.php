@@ -2,9 +2,77 @@
 	
 	get_header();
 
+	$sliderImages = new WP_Query(array(
+						'post_type' => 'sliderUniqueId'
+					));
+
 	?>
 
 	<div class="site-content clearfix">
+
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+			<ol class="carousel-indicators">
+			<?php
+
+				$i = 0;
+
+				while ($sliderImages->have_posts()) : $sliderImages->the_post();
+
+					?>
+					<li data-target="#myCarousel" data-slide-to="<?php echo $i; ?>" class="<?php if($i==0) { ?>active<?php } ?>"></li>
+					<?php
+				$i++;
+				endwhile;
+			?>
+			</ol>
+
+			<div class="carousel-inner">
+
+				<?php
+
+					$i = 0;
+
+					while ($sliderImages->have_posts()) : $sliderImages->the_post();
+
+						?>
+						<div class="carousel-item <?php if($i==0) { ?>active<?php } ?>">
+
+							<?php the_post_thumbnail(); ?>
+
+							<div class="container">
+
+								<div class="carousel-caption text-left">
+
+									<h1>Example headline.</h1>
+
+									<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+									<p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+
+								</div>
+
+							</div>
+
+						</div>
+						<?php
+					$i++;
+					endwhile;
+				?>
+
+			</div>
+
+			<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+
+			<a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+
+		</div>
 		
 		<?php
 

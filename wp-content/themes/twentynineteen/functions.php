@@ -2,6 +2,11 @@
 
 	function learningWordPress_resources() {
 		wp_enqueue_style( 'style', get_stylesheet_uri());
+		wp_enqueue_style( 'carousel-style', get_theme_file_uri().'/assets/css/carousel.css');
+		wp_enqueue_style( 'bootstrap-style', get_theme_file_uri().'/assets/css/bootstrap.min.css');
+
+		wp_enqueue_script('bootstrap-script', get_theme_file_uri().'/assets/js/bootstrap.min.js', array('jquery'));
+		wp_enqueue_script('jquery-slim-script', get_theme_file_uri().'/assets/js/jquery-slim.min.js', array('jquery'));
 	}
 
 	add_action('wp_enqueue_scripts', 'learningWordPress_resources');
@@ -34,6 +39,19 @@
 	add_filter( 'excerpt_length', 'custom_excerpt_length');
 
 	function learningWordPress_setup() {
+
+		// Custom Post Type
+		register_post_type('sliderUniqueId', array(
+			'labels' => array(
+					'name' => 'Sliders',
+					'add_new_item' => 'Add Slider Image'
+				),
+			'public' => true,
+			'supports' => array(
+					'title',
+					'thumbnail'
+				)
+		));
 
 		// Navigation Menus
 		register_nav_menus( array(
@@ -108,6 +126,6 @@
 
 	}
 
-	add_action('widgets_init','ourWidgetsInit');
-
 	include_once('custom_functions/custom_wedgets.php');
+
+	add_action('widgets_init','ourWidgetsInit');

@@ -17,23 +17,25 @@ function aothor_info_custom_js_resources() {
 // Create Custom Widgets
 class Author_Info_Widget extends WP_widget {
 	
+	// This function is overwritten and for loading it into the widget list in admin panel
 	public function __construct() {
 		parent::__construct('author_info', 'Author Info Box', array(
 			'description' => 'Author Information Box Contained with title, image and details.'
 		));
 	}
 
+	// This function is overwritten and for showing the widget in front-end
 	public function widget( $args, $instance ) {
 
 		?>
 
 			<?php echo $args['before_widget']; ?>
-				<?php echo $args['before_title']; ?>About Me<?php echo $args['after_title']; ?>
+				<?php echo $args['before_title']. $instance['title'] .$args['after_title']; ?>
 				<div class="sidebar-widget__about-me">
 					<div class="sidebar-widget__about-me-image">
-						<img src="img/about-me.jpg" alt="About Me">
+						<img src="<?php echo $instance['author_info_image']; ?>" alt="<?php echo $instance['title']; ?>">
 					</div>
-					<p>Rakitic and his team-mates have the opportunity to equal, or even better, Croatia’s storied 1998 side that finished in third place.</p>
+					<p><?php echo $instance['author_bio']; ?></p>
 				</div>
 			<?php echo $args['after_widget']; ?>
 
@@ -41,6 +43,7 @@ class Author_Info_Widget extends WP_widget {
 	
 	}
 
+	// This function is overwritten and for creating the widget form in admin panel
 	public function form( $instance ) {
 		?>
 			<p>
