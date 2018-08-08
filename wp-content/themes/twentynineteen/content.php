@@ -1,3 +1,4 @@
+<h2>content.php</h2>
 <article class="post <?php if (has_post_thumbnail() && !is_single()) { ?> has-thumbnail <?php } ?>">
 
 	<?php
@@ -56,7 +57,7 @@
 	<p class="post-tag">
 		Tag |  
 		<?php
-			$tags = get_the_tags();;
+			$tags = get_the_tags();
 			$separetor = ", ";
 			$output = '';
 

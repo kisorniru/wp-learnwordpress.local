@@ -1,3 +1,5 @@
+<h2>content-page.php</h2>
+
 <article class="post page">
 
 	<?php

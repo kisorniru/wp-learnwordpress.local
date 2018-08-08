@@ -2,6 +2,7 @@
 	
 	get_header();
 	?>
+<h2>page.php</h2>
 
 	<div class="site-content clearfix">
 		
